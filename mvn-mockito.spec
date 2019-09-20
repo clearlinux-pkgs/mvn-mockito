@@ -4,7 +4,7 @@
 #
 Name     : mvn-mockito
 Version  : 1.9.5
-Release  : 4
+Release  : 5
 URL      : https://github.com/mockito/mockito/archive/v1.9.5.tar.gz
 Source0  : https://github.com/mockito/mockito/archive/v1.9.5.tar.gz
 Source1  : https://repo1.maven.org/maven2/org/mockito/mockito-all/1.8.2/mockito-all-1.8.2.jar
@@ -15,6 +15,8 @@ Source5  : https://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.19/mocki
 Source6  : https://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.pom
 Source7  : https://repo1.maven.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar
 Source8  : https://repo1.maven.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.pom
+Source9  : https://repo1.maven.org/maven2/org/mockito/mockito-core/2.18.3/mockito-core-2.18.3.jar
+Source10  : https://repo1.maven.org/maven2/org/mockito/mockito-core/2.18.3/mockito-core-2.18.3.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT
@@ -22,6 +24,7 @@ Requires: mvn-mockito-data = %{version}-%{release}
 Requires: mvn-mockito-license = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : buildreq-mvn
+BuildRequires : gradle
 
 %description
 Some fragments of Mockito source code might be inspired by libraries of licenses collected in this folder.
@@ -87,6 +90,12 @@ cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-cor
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-core/1.9.5
 cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-core/2.18.3
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-core/2.18.3/mockito-core-2.18.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-core/2.18.3
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-core/2.18.3/mockito-core-2.18.3.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -101,6 +110,8 @@ cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/mockito/mockito-cor
 /usr/share/java/.m2/repository/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.pom
 /usr/share/java/.m2/repository/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar
 /usr/share/java/.m2/repository/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.pom
+/usr/share/java/.m2/repository/org/mockito/mockito-core/2.18.3/mockito-core-2.18.3.jar
+/usr/share/java/.m2/repository/org/mockito/mockito-core/2.18.3/mockito-core-2.18.3.pom
 
 %files license
 %defattr(0644,root,root,0755)
